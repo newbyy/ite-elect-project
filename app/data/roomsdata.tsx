@@ -7,6 +7,7 @@ import room5 from '../images/room_5.jpg';
 import room6 from '../images/room_6.jpg'; 
 
 export interface Data  { 
+    roomid: string,
     path: string
     room: string
     price: number
@@ -16,6 +17,7 @@ export interface Data  {
 
 const data: Data[] = [
     {
+        roomid: 'room1',
         path: room1,
         room: 'Room 1',
         price: 99,
@@ -23,6 +25,7 @@ const data: Data[] = [
         rating: 4
     },
     {
+        roomid: 'room2',
         path: room2,
         room: 'Room 2',
         price: 125,
@@ -30,6 +33,7 @@ const data: Data[] = [
         rating: 4.5
     }, 
     {
+        roomid: 'room3',
         path: room3,
         room: 'Room 3',
         price: 135,
@@ -37,6 +41,7 @@ const data: Data[] = [
         rating: 5
     }, 
     {
+        roomid: 'room4',
         path: room4,
         room: 'Room 4',
         price: 80,
@@ -44,6 +49,7 @@ const data: Data[] = [
         rating: 3.5
     }, 
     {
+        roomid: 'room5',
         path: room5,
         room: 'Room 5',
         price: 120,
@@ -51,6 +57,7 @@ const data: Data[] = [
         rating: 4
     }, 
     {
+        roomid: 'room6',
         path: room6,
         room: 'Room 6',
         price: 125,

@@ -1,20 +1,35 @@
-import type { Data } from "~/data/roomsdata";
+import type { spa } from "~/data/spadata"; 
 
-interface cardProps extends Data { 
-    handleClick: (props: Data) => void
-}
-
-export default function Cardv2({path, room, price, desc, handleClick, rating}: cardProps) {
-    return (
+export default function Cardv2({desc, img, price, type}: spa) {
+    return ( 
         <div 
-            onClick={() => handleClick({path, room, price, desc, rating})} 
-            className='shadow-[#86b9c5] relative group hover:cursor-pointer overflow-hidden min-w-[300px] sm:mx-12 mx-4 h-[350px] sm:h-[500px] md:mx-16 my-16 md:min-w-[400px] text-white flex justify-center items-center shadow-md   hover:shadow-[#0d333c] rounded-2xl transition-all duration-700'
+            className="
+                group 
+                hover:cursor-pointer 
+                transition-all  
+                h-[220px] 
+                sm:h-[320px]
+                rounded-lg 
+                relative  
+                drop-shadow-[0_5px_3px_rgba(0,0,0,0.5)] 
+                flex 
+                flex-col 
+                md:min-w-[500px]
+                overflow-hidden 
+                md:snap-center
+                md:min-h-[400px]
+            "
         >
-            <img alt={room}  src={path} className="h-full w-full object-cover group-hover:scale-125 duration-500 transition-all " />
- 
-            <div className="absolute py-6 flex group-hover:opacity-100 transition-all duration-700 opacity-0 justify-between items-center bottom-0 bg-black bg-opacity-40 w-full p-3">
-                <h1 className="text-3xl">{room}</h1> 
-                <h1>$ {price} <span className="text-sm text-slate-400">/ night</span></h1>
+            <img
+                className=" absolute h-full w-full object-cover"
+                alt={img}
+                src={img}
+            /> 
+            <div className="h-full w-full bg-black absolute bg-opacity-60 z-10" />
+            <div className="absolute h-full w-full text-white z-20 flex items-center justify-center text-3xl flex-col"> 
+                <h1 className=" group-hover:hidden px-[10%] font-bold md:text-5xl bg-clip-content ">{type}</h1>
+                <h2 className="group-hover:hidden text-base sm:text-lg">₱ {price} <span className="text-slate-300">/ hr</span></h2>
+                <p className="group-hover:transition-all group-hover:block hidden flex-wrap text-sm text-center px-[10%] sm:text-base transition-all">{desc}</p>
             </div>
         </div>
     )

@@ -9,7 +9,7 @@ import type { ActionFunction, ActionArgs, V2_MetaFunction,  } from "@remix-run/n
 import FbIcon from 'remixicon-react/FacebookLineIcon'
 import Ig from 'remixicon-react/InstagramLineIcon'
 import Twt from 'remixicon-react/TwitterLineIcon';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion' 
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "SpaRe's" }];
@@ -21,21 +21,22 @@ export const action:ActionFunction = async({request}: ActionArgs) => {
   return redirect ('/')
 }
 
-export default function Index() {  
+export default function Index() {   
+  
   const actionData = useActionData<typeof action>(); 
   return ( 
     <>
-      <section className="h-[92vh] z-10  relative ">
-        <img src={bgImage} className="absolute opacity-30 h-full w-full object-cover" alt="bgImage" />
+      <section className="h-screen  flex items-center w-screen z-10  relative ">
+        <img src={bgImage} className="absolute opacity-30 h-full w-screen object-cover" alt="bgImage" />
         <motion.div 
-          initial={{x:100, opacity: 0}}
+          initial={{x:50, opacity: 0}}
           transition={{type: 'spring', duration: 1.2, damping: 99, stiffness: 99}}
           whileInView={{x: 0, opacity: 1}}  
           viewport={{once: false}}
-          className="h-full w-full absolute z-20 flex flex-col justify-center pl-10 transition-all sm:pl-20" 
+          className="h-full overflow-y-scroll  w-screen   absolute z-20 flex flex-col justify-center pl-10 transition-all sm:pl-20  " 
         >
-          <h1 className="text-[70px] sm:text-[100px] quicksand text-black transition-all">Spa and Resort</h1>
-          <p className="w-4/5 tracking-widest poppins leading-10 break-words font-bold transition-all">Escape to our luxurious spa and resort for ultimate relaxation and rejuvenation. Indulge in breathtaking views, top-notch amenities, and pampering treatments designed to revitalize your body and mind.</p>
+          <h1 className="text-[50px] sm:text-[70px] md:mt-0   quicksand text-black transition-all">Spa and Resort</h1>
+          <p className="w-4/5 md:tracking-widest poppins md:leading-10 break-words transition-all">Escape to our luxurious spa and resort for ultimate relaxation and rejuvenation. Indulge in breathtaking views, top-notch amenities, and pampering treatments designed to revitalize your body and mind.</p>
           <button className="border border-black hover:border-white duration-1000 self-start my-10 animate-typing font-bold hover:bg-white hover:bg-opacity-60 px-4 py-2 hover:rounded-lg transition-all bg-opacity-0 hover:shadow-xl ">
             Explore More...
           </button>
@@ -60,7 +61,7 @@ export default function Index() {
         </div>
       </section>
       <section className="sm:p-8 bg-[#00323D] w-screen flex flex-col sm:flex-row   sm:justify-evenly ">
-        <div className="p-8 gap-y-2 w-[100%] sm:w-6/12  ">
+        <div className="p-8  w-full sm:w-6/12  ">
           <Form method="post" >
             <h1 className="text-white text-3xl " >Contact us:</h1>
             <div >
@@ -78,7 +79,7 @@ export default function Index() {
             <h1>Address: sample addresss</h1>
             <h1>Contact No. 09876543210</h1>
           </div>
-          <div className="flex w-full gap-10 justify-center">
+          <div className="flex w-full gap-10 justify-center pb-8">
             <div className="bg-slate-900 p-3 rounded-full cursor-pointer hover:text-slate-900 hover:bg-white overflow-hidden transition-all ">
               <FbIcon size={30}  className="hover:scale-150 hover:pr-1 transition-all duration-500"/>
             </div>
