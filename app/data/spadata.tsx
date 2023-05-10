@@ -8,7 +8,7 @@ export interface spa {
     type: string,
     id?: number,
     price: number,
-    img: string
+    img: string; 
 }
 
 const data = [

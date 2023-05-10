@@ -7,6 +7,10 @@
 /* 
 */
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 .quicksand { 
     font-family: 'Quicksand', sans-serif; 
 }
@@ -14,3 +18,4 @@
 .poppins {
     font-family: 'Poppins', sans-serif;
 }
+ 

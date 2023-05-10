@@ -1,7 +1,7 @@
 import type{ LoaderFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
-import React from 'react'
-import { Cardv2 } from '~/components'
+import React, { useState } from 'react'
+import { Cardv2, Modal } from '~/components'
 import data from '~/data/spadata'
 import type { spa } from '~/data/spadata'  
 
@@ -11,17 +11,30 @@ export async function loader(): Promise<Array<spa>> {
 
 export default function Services() {
   const data = useLoaderData<typeof loader>();
+  const [modal, setModal] = useState(true)
+
+  function handleModal() {
+    setModal(false);
+  }  
+
+  function handleOpen() {
+    setModal(true);
+  } 
 
   return (
 
-    <div className='relative h-auto md:h-screen p-3 w-screen bg-[#22A5C2] bg-opacity-30 '>
-      <h1 className='text-xl md:absolute   py-2 poppins font-bold md:text-3xl lg:text-5xl'>Spa Services Offer:</h1> 
+    <div className={`relative  md:h-screen ${modal ? 'p-0' : 'p-3'} w-screen bg-[#22A5C2] bg-opacity-30 ${modal ? 'h-screen overflow-hidden overflow-y-hidden' : 'h-auto'} `}>
+      <Modal handleModal={handleModal} modal={modal} />
+      <div className='flex justify-between w-full md:px-10   relative top-10'>  
+        <h1 className='text-xl  poppins font-bold md:text-3xl lg:text-5xl'>Spa Services Offer:</h1>
+        <button onClick={handleOpen}>Avail Service</button> 
+      </div>
       <div 
-        className='
+        className={`
           flex 
           flex-col 
-          gap-y-4 
-          p-2  
+          gap-y-4
+          first-letter:
           pb-16 
           px-[2%] 
           md:flex-row 
@@ -34,11 +47,13 @@ export default function Services() {
           md:h-full 
           md:pb-0
           md:gap-y-0
-        '
+        `}
       > 
         
-        {data.map((spa) => (
-          <Cardv2 key={spa.id} desc={spa.desc} price={spa.price} type={spa.type} img={spa.img}  />
+        {data.map((spa, index) => (
+          <>
+            <Cardv2 key={index} desc={spa.desc} price={spa.price} type={spa.type} img={spa.img} />
+          </>
         ))}
       </div>
     </div>
