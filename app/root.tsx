@@ -4,16 +4,23 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
-  useNavigation,
+  ScrollRestoration, 
 } from "@remix-run/react";
 import globalcss from './style/global.css';
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, V2_MetaFunction } from "@remix-run/node";
 import { Navbar } from "./components"; 
+import icon from  "../public/icon.png"
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet",   href: globalcss }, 
+  { rel: "icon", href: icon}
 ]
+
+export const meta: V2_MetaFunction = () => {
+  return [{ 
+    title: "SpaRe's", 
+  }];  
+};
 
 export default function App() {
   
@@ -25,7 +32,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="scroll-smooth overflow-hidden">   
+      <body className="scroll-smooth overflow-hidden">    
         <header className="z-50 bg-red-300">
           <Navbar />
         </header>
@@ -34,7 +41,7 @@ export default function App() {
         </div>  
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
+        <LiveReload /> 
       </body>
     </html>
   );

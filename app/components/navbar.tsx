@@ -23,12 +23,14 @@ export default function Navbar() {
 
     return (
         <nav className="w-screen flex h-[70px] items-center fixed top-0  bg-[#22A5C2]  justify-between px-5 py-6 z-[99]">
-            <h1 className="quicksand tracking-widest text-white text-3xl " style={{textShadow: '-2px 2px 3px rgba(0, 0, 0, 0.5)'}}>SpaRe's</h1>
+            <Link to='/'>
+                <h1 className="quicksand   tracking-widest cursor-pointer text-white sm:text-4xl text-3xl md:text-5xl " style={{textShadow: '-2px 2px 3px rgba(0, 0, 0, 0.5)'}}>SpaRe's</h1>
+            </Link>
             {/* FOR MD DEVICES */}
             <div className="hidden  sm:flex text-white text-xl sm:gap-x-5 md:gap-x-10 transition-all"> 
                 {links.map(({link, path}) => (
                     <Link 
-                        className={`poppins last:pr-10 hover:underline ${pathname == path || (pathname.includes('/rooms') && path.includes('/rooms'))  ? 'underline' : '' } `}
+                        className={`poppins px-3 py-3   last:mr-10 hover:underline ${pathname == path || (pathname.includes('/rooms') && path.includes('/rooms'))  ? 'underline' : '' } `}
                         key={path} 
                         to={path}
                     >

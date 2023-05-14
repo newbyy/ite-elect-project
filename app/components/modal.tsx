@@ -101,7 +101,7 @@ export default function Modal({ modal, handleModal } : props) {
                             <hr />
                             <div className='flex flex-col space-y-2'>
                                 <label htmlFor='email' className='after:content-["*"] after:pl-1 after:text-red-600'>Email</label>
-                                <input  pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="email"  className='border numb w-full p-2 focus:outline-[#22A5C2] focus:appearance-none' placeholder='example@email.com'  />
+                                <input id="email"  className='border numb w-full p-2 focus:outline-[#22A5C2] focus:appearance-none' placeholder='example@email.com'  />
                             </div>  
                             <button className='text-white p-2 bg-[#22A5C2]' type='submit'>Book</button>
                             <button className='text-white p-2 bg-slate-600' onClick={handleModal}>Cancel</button>

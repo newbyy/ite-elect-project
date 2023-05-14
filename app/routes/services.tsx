@@ -1,6 +1,6 @@
 import type{ LoaderFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { Cardv2, Modal } from '~/components'
 import data from '~/data/spadata'
 import type { spa } from '~/data/spadata'  
@@ -11,7 +11,7 @@ export async function loader(): Promise<Array<spa>> {
 
 export default function Services() {
   const data = useLoaderData<typeof loader>();
-  const [modal, setModal] = useState(true)
+  const [modal, setModal] = useState(false)
 
   function handleModal() {
     setModal(false);
