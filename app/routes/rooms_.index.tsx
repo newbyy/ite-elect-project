@@ -28,8 +28,7 @@ export default function Room() {
         <div 
             className=' 
                 py-5
-                w-screen 
-                bg-slate-400 
+                w-screen  
                 flex 
                 flex-col 
                 justify-center 

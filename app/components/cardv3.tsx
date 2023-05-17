@@ -8,11 +8,14 @@ interface props extends Data {
 export default function cardv3({ desc, path, price, rating, room, roomid, handleClick }:props) {
     return (
         <div 
+            key={roomid}
             className="
                 relative
                 overflow-hidden
                 min-h-[380px]
                 min-w-[300px]
+                shadow-2xl
+                shadow-slate-500
                 bg-white
                 rounded-2xl 
                 group

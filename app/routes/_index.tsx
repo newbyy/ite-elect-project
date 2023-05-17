@@ -10,7 +10,7 @@ import FbIcon from 'remixicon-react/FacebookLineIcon'
 import Ig from 'remixicon-react/InstagramLineIcon'
 import Twt from 'remixicon-react/TwitterLineIcon';
 import { motion } from 'framer-motion'  
-import React, { useState  } from 'react';
+import React, { useState  } from 'react'; 
 
 
 export const action:ActionFunction = async({request}: ActionArgs) => {
@@ -18,6 +18,10 @@ export const action:ActionFunction = async({request}: ActionArgs) => {
   console.log(values)
   return redirect('/')
 } 
+
+export const meta: V2_MetaFunction = () => {
+  return [{title: "Home"}]
+}
   
 
 

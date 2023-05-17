@@ -13,19 +13,20 @@ interface props {
 export default function Modal({ modal, handleModal } : props) {
     const [price, setPrice] = useState(0);
     const [val, setVal] = useState(''); 
+    
 
     return (
         <div className={`w-screen h-screen m-0 absolute transition-all z-30 ${modal ? ' flex' : 'hidden'}`}>
-            <div className='w-full h-full relative z-40 flex justify-center items-center'>
+            <div className='w-full h-full  relative z-40 flex justify-center items-center'>
                 <div className='w-full absolute h-full z-40 bg-black bg-opacity-90' onClick={handleModal}></div>
-                <div className='w-[80%] p-3 h-[60%] md:p-5 md:w-2/6 md:h-3/6  absolute z-50 bg-white overflow-hidden '> 
+                <div className='w-[80%] p-3 h-[60%] md:p-5 md:w-2/6 md:h-3/6  rounded-lg absolute z-50 bg-white overflow-hidden '> 
                     <form className='w-full  h-full '
                         onSubmit={(e) => {
                             e.preventDefault();
                             console.log(e)
                         }}
                     > 
-                        <div className='flex flex-col h-full overflow-y-scroll gap-y-3 pb-5  pr-3   '> 
+                        <div className='flex flex-col h-full overflow-y-scroll  gap-y-3 pb-5  pr-3   '> 
                             <h1 className='text-lg poppins text-center'>Book Spa Service </h1>
                             <div className='spacing-y-2'>
                                 <label htmlFor='#select' className='after:content-["*"] after:pl-1 after:text-red-600'>Type:</label>

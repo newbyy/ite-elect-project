@@ -18,8 +18,14 @@ export default function Navbar() {
         {
             link: 'Rooms',
             path: '/rooms/index'
-        }, 
+        },  
+        {
+            link: 'Book now',
+            path: '/booknow'
+        },  
     ]; 
+
+    console.log(pathname)
 
     return (
         <nav className="w-screen flex h-[70px] items-center fixed top-0  bg-[#22A5C2]  justify-between px-5 py-6 z-[99]">
