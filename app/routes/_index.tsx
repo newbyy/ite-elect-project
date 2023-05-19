@@ -138,7 +138,7 @@ export default function Index() {
             <button disabled={isDisable()} type="submit" className="disabled:bg-slate-500 disabled:bg-opacity-50 disabled:text-slate-400   rounded-md bg-white w-[100%] sm:w-[100%] md:w-[70%] my-4 py-2">{navigation.state === "submitting" ? 'Loading...' : 'Submit'}</button>
           </Form>
         </div>
-        <div className="w-screen sm:w-6/12 text-white text-xl self-center justify-self-center "> 
+        <div className="w-screen sm:w-6/12 text-white text-xl self-center justify-self-center pb-5"> 
           <div className="flex flex-col gap-y-5 mb-5 px-10 items-center break-words leading-6 tracking-widest ">
             <h1>Email: sample@email.com</h1>
             <h1>Address: 2937 Petunia Way, Birmingham City</h1>
